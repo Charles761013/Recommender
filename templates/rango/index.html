@@ -3,5 +3,25 @@
 {% block title %}Index{% endblock %}
 
 {% block body_block %}
-    put google map here
+    <div class="page-header">
+        <h2>You can enter some key word to search for business store</h2>
+    </div>
+    <div>
+        <form role="form"  id="page_form" method="post" action="{% url 'index' %}">
+        <h2 class="form-signin-heading">Search Here</h2>
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+    
+            {% for field in form.visible_fields %}
+                {{ field.errors }}
+                {{ field.help_text }}<br/>
+                {{ field }}</br>
+            {% endfor %}
+            </br>
+            <!--<input type="submit" name="submit" value="Create Page" />-->
+            <button class="btn btn-primary" type="submit" name="submit">Start Search</button>
+        </form>
+    </div>
 {% endblock %}

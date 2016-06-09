@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Map{% endblock %}
+
+{% block body_block %}
+     <body onload="{{ google.js_module }}.map_load()" onunload="GUnload()">
+        <h2>The result of your search</h2>
+        <div id="{{ google.dom_id }}" style="width:800px; height:600px;"></div>
+    </body>
+{% endblock %}
+   

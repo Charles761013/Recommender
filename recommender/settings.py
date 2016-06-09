@@ -26,7 +26,7 @@ SECRET_KEY = '_$9!zdt)x=okd%9=#lk65rnqc3-csg7iblolv1=q$ngx$2#ubd'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 REGISTRATION_OPEN = True        # If True, users can register
 ACCOUNT_ACTIVATION_DAYS = 7     # One-week activation window; you may, of course, use a different value.
@@ -34,6 +34,9 @@ REGISTRATION_AUTO_LOGIN = True  # If True, the user will be automatically logged
 LOGIN_REDIRECT_URL = '/rango/'  # The page you want users to arrive at after they successful log in
 LOGIN_URL = '/accounts/login/'  # The page users are directed to if they are not logged in,
                                 # and are trying to access pages requiring authentication
+                                
+GEOS_LIBRARY_PATH = '/usr/local/lib/libgeos_c.so'
+GOOGLE_MAPS_API_PASSWORD = 'AIzaSyBUpPEY-tdCJyDjZ_WrHTT0hJt7pmC0vts'
 
 # Application definition
 
@@ -46,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rango',
     'registration',
+    'django.contrib.gis'
 ]
 
 MIDDLEWARE_CLASSES = [
